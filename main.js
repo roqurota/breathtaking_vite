@@ -73,7 +73,7 @@ let isRestarted = false;
 preloadFiles();
 
 Promise.all(promises).then(() => {
-  // runApp();
+  runApp();
 });
 
 let soundIndex = 0;
