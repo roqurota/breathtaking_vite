@@ -431,39 +431,55 @@ function preloadImage(obj) {
 }
 
 function preloadAudio(obj) {
-  promises.push(new Promise(resolve => {
-      let audio = new Audio(obj.url);
+  let audio = new Audio(obj.url);
 
-      obj.audio = audio;
+  obj.audio = audio;
 
-      if (obj.type && obj.type === 'vocal')
-          audio.addEventListener('ended', function(){
-              audio.currentTime = 0;
-              activeVocal = false;
-          });
+  if (obj.type && obj.type === 'vocal')
+      audio.addEventListener('ended', function(){
+          audio.currentTime = 0;
+          activeVocal = false;
+      });
 
-      if (obj.name && obj.name === 'theme')
-          audio.addEventListener('ended', function(){
-              audio.currentTime = 0;
-              audio.play();
-          });
+  if (obj.name && obj.name === 'theme')
+      audio.addEventListener('ended', function(){
+          audio.currentTime = 0;
+          audio.play();
+      });
 
-      // let audioUI = document.createElement('audio');
-      // audioUI.setAttribute('src', obj.url);
-      // container.appendChild(audioUI);
+  // promises.push(new Promise(resolve => {
+  //     let audio = new Audio(obj.url);
 
-      // if (obj.type && obj.type === 'vocal')
-      //     audioUI.addEventListener('ended', function(){
-      //         audioUI.currentTime = 0;
-      //         activeVocal = false;
-      //     });
+  //     obj.audio = audio;
 
-      // obj.audio = audioUI;
+  //     if (obj.type && obj.type === 'vocal')
+  //         audio.addEventListener('ended', function(){
+  //             audio.currentTime = 0;
+  //             activeVocal = false;
+  //         });
 
-      audio.oncanplaythrough = function() {
-          resolve();
-      };
-  }))
+  //     if (obj.name && obj.name === 'theme')
+  //         audio.addEventListener('ended', function(){
+  //             audio.currentTime = 0;
+  //             audio.play();
+  //         });
+
+  //     // let audioUI = document.createElement('audio');
+  //     // audioUI.setAttribute('src', obj.url);
+  //     // container.appendChild(audioUI);
+
+  //     // if (obj.type && obj.type === 'vocal')
+  //     //     audioUI.addEventListener('ended', function(){
+  //     //         audioUI.currentTime = 0;
+  //     //         activeVocal = false;
+  //     //     });
+
+  //     // obj.audio = audioUI;
+
+  //     audio.oncanplaythrough = function() {
+  //         resolve();
+  //     };
+  // }))
 }
 
 function drawPerson() {
