@@ -21,17 +21,17 @@ var imagesToLoad = [
 ];
 
 var soundsToLoad = [
-  { url: './sounds/hand.wav', name:'Hand' ,type: 'vocal' },
-  { url: './sounds/love.wav', name:'Love' ,type: 'vocal' },
-  { url: './sounds/word.wav', name:'Word' ,type: 'vocal' },
-  { url: './sounds/trust.wav', name:'Trust' ,type: 'vocal' },
-  { url: './sounds/shelter.wav', name:'Shelter' ,type: 'vocal' },
-  { url: './sounds/feel.wav', name:'Feel' ,type: 'vocal' },
-  { url: './sounds/breathtaking.wav', name:'Breathtaking' ,type: 'vocal' },
-  { url: './sounds/real.wav', name:'Unreal' ,type: 'vocal' },
-  { url: './sounds/unreal.wav' },
-  { url: './sounds/main_cut.wav', name: 'main' },
-  { url: './sounds/theme.wav', name: 'theme' }
+  { url: './sounds/hand.mp3', name:'Hand' ,type: 'vocal' },
+  { url: './sounds/love.mp3', name:'Love' ,type: 'vocal' },
+  { url: './sounds/word.mp3', name:'Word' ,type: 'vocal' },
+  { url: './sounds/trust.mp3', name:'Trust' ,type: 'vocal' },
+  { url: './sounds/shelter.mp3', name:'Shelter' ,type: 'vocal' },
+  { url: './sounds/feel.mp3', name:'Feel' ,type: 'vocal' },
+  { url: './sounds/breathtaking.mp3', name:'Breathtaking' ,type: 'vocal' },
+  { url: './sounds/real.mp3', name:'Unreal' ,type: 'vocal' },
+  { url: './sounds/unreal.mp3' },
+  { url: './sounds/main_cut.mp3', name: 'main' },
+  { url: './sounds/theme.mp3', name: 'theme' }
 ];
 
 var sounds = [
