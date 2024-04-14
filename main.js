@@ -21,17 +21,7 @@ var imagesToLoad = [
 ];
 
 var soundsToLoad = [
-  { url: './sounds/hand.mp3', name:'Hand' ,type: 'vocal' },
-  { url: './sounds/love.mp3', name:'Love' ,type: 'vocal' },
-  { url: './sounds/word.mp3', name:'Word' ,type: 'vocal' },
-  { url: './sounds/trust.mp3', name:'Trust' ,type: 'vocal' },
-  { url: './sounds/shelter.mp3', name:'Shelter' ,type: 'vocal' },
-  { url: './sounds/feel.mp3', name:'Feel' ,type: 'vocal' },
-  { url: './sounds/breathtaking.mp3', name:'Breathtaking' ,type: 'vocal' },
-  { url: './sounds/real.mp3', name:'Unreal' ,type: 'vocal' },
-  { url: './sounds/unreal.mp3' },
-  { url: './sounds/main_cut.mp3', name: 'main' },
-  { url: './sounds/theme.mp3', name: 'theme' }
+  { url: './sounds/hand.mp3', name:'Hand' ,type: 'vocal' }
 ];
 
 var sounds = [
@@ -425,8 +415,8 @@ function preloadFiles(){
   for (var i = 0; i < imagesToLoad.length; i++)
       preloadImage(imagesToLoad[i]);
 
-  // for (var i = 0; i < soundsToLoad.length; i++)
-  //     preloadAudio(soundsToLoad[i]);
+  for (var i = 0; i < soundsToLoad.length; i++)
+      preloadAudio(soundsToLoad[i]);
 }
 
 function preloadImage(obj) {
