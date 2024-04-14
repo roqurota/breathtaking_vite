@@ -425,8 +425,8 @@ function preloadFiles(){
   // for (var i = 0; i < imagesToLoad.length; i++)
   //     preloadImage(imagesToLoad[i]);
 
-  for (var i = 0; i < soundsToLoad.length; i++)
-      preloadAudio(soundsToLoad[i]);
+  // for (var i = 0; i < soundsToLoad.length; i++)
+  //     preloadAudio(soundsToLoad[i]);
 }
 
 function preloadImage(obj) {
