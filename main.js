@@ -59,6 +59,7 @@ let promises = [];
 let appIsReady = false;
 let isGame = false;
 let isRestarted = false;
+let isSinging = false;
 
 preloadFiles();
 
@@ -192,6 +193,7 @@ function restartGame(force) {
       timer = null;
       startDate = null;
       score = 0;
+      isSinging = false;
 
       startBtn.classList.remove('hidden');
       setTimeout(() => startBtn.classList.remove('hide'), 10);
@@ -222,7 +224,10 @@ function restartGame(force) {
 
       isRestarted = false;
 
-      soundsBtn.forEach(btn => btn.style = '');
+      soundsBtn.forEach(btn => {
+        btn.style = '';
+        btn.removeAttribute('disabled');
+      });
   }, 1200);
 
   animationPause = false;
@@ -319,7 +324,10 @@ function showScore() {
       restartBtn.classList.add('hidden');
   }, 300);
 
-  soundsBtn.forEach(btn => btn.style = '');
+  soundsBtn.forEach(btn => {
+    btn.style = '';
+    btn.removeAttribute('disabled');
+  });
 }
 
 function mobileUser() {
@@ -449,7 +457,7 @@ function soundBtnHandler(btn, index){
     sound.button = btn;
 
   btn.addEventListener(eventName, () => {
-      if (!isGame || activeVocal)
+      if (!isGame || activeVocal || btn.hasAttribute('disabled'))
           return
 
       activeVocal = true;
@@ -461,6 +469,9 @@ function soundBtnHandler(btn, index){
       if (sound)
         if (answerWindow && sound.name === sounds[soundAnswerIndex].name) {
             hideHint(sound, 1);
+
+            if (isSinging)
+              btn.setAttribute('disabled', 'true');
 
             score++;
         } else
@@ -489,6 +500,7 @@ function gameTimer() {
       var diff = new Date().getTime() - startDate.getTime();
 
       if (diff + 1000 >= sound.time) {
+          isSinging = true;
           // setActiveButton(sound.button);
           showHint(sound);
       }
